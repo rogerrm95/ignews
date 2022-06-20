@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import styles from './styles.module.scss'
 import { SigninButton } from '../SigninButton'
 import { ActiveLink } from '../ActiveLink'
