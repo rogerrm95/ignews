@@ -13,6 +13,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [SASS](https://sass-lang.com/);
 - [Stripe - Plataforma de pagamento online](https://stripe.com/br);
 - [Typescript](https://www.typescriptlang.org/).
+- [Jest](https://jestjs.io/pt-BR/)
 
 # 🚀 Como executar
 
