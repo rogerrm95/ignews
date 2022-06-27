@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next"
 import { Session } from "next-auth"
 import { getSession, useSession } from "next-auth/client"
-import { useRouter } from "next/dist/client/router"
+import { useRouter } from "next/router"
 import Head from 'next/head'
 import Link from "next/link"
 
@@ -27,15 +27,13 @@ interface SessionData extends Session {
 export default function PostPreview({ post }: PostPreviewProps) {
 
     const [session] = useSession()
-    const typedSession: SessionData = session
-    const { push } = useRouter()
+    const typedSession = session as SessionData
+    const router = useRouter()
 
     useEffect(() => {
-
         if (typedSession?.activeSubscription) {
-            push(`/posts/${post.slug}`)
+            router.push(`/posts/${post.slug}`)
         }
-
     }, [session])
 
     return (
@@ -56,7 +54,7 @@ export default function PostPreview({ post }: PostPreviewProps) {
                     />
 
                     <div className={styles.continueReading}>
-                        Wanna continue reading ?
+                        Wanna continue reading?
                         <Link href="/">
                             <a>
                                 Subscribe now 🚀
